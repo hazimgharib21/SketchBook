@@ -42,7 +42,8 @@ class Touch{
       16, // 15
       17 // 16
     };
-    
+
+    int bounce;
     byte pressed[arraySize(touch)];
     byte justPressed[arraySize(touch)];
     byte justReleased[arraySize(touch)];
@@ -63,6 +64,7 @@ class Touch{
 SoftwareSerial mySerial(15, 16); // RX, TX
 SevenSegment ss1(24, 22, 26); // Latch, Data Clock
 SevenSegment ss2(30, 28, 32); // Latch, Data Clock
+Touch touch;
 
 void setup() {
   
@@ -70,11 +72,23 @@ void setup() {
 }
 
 void loop() {
-  
+
+  Countdown(touch.getTouched());
 
 }
 
 
+void Countdown(int num){
+
+  int temp;
+
+  int num1 = num / 10;
+  int num2 = num - (num1 * 10);
+
+  ss1.displayNum(num1);
+  ss2.displayNum(num2);
+  
+}
 
 
 
