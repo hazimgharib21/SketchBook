@@ -61,6 +61,9 @@ class Touch{
 // Main Arduino Sketch
 //********************************************************************************************************************
 
+int TouchState = 99;
+int count = 0;
+
 SoftwareSerial mySerial(15, 16); // RX, TX
 SevenSegment ss1(24, 22, 26); // Latch, Data Clock
 SevenSegment ss2(30, 28, 32); // Latch, Data Clock
@@ -73,21 +76,9 @@ void setup() {
 
 void loop() {
 
-  Countdown(touch.getTouched());
+  updateState();
+  mainProgram();
 
-}
-
-
-void Countdown(int num){
-
-  int temp;
-
-  int num1 = num / 10;
-  int num2 = num - (num1 * 10);
-
-  ss1.displayNum(num1);
-  ss2.displayNum(num2);
-  
 }
 
 
