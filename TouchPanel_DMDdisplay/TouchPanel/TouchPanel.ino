@@ -49,6 +49,7 @@ class Touch{
     byte previousKeyState[arraySize(touch)];
     byte currentKeyState[arraySize(touch)];
     
+    void checkTouched();
     
   public:
     Touch();
