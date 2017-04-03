@@ -76,7 +76,20 @@ void mainProgram(){
     case 16:
       Serial.println("pin 16 just touched");
       mySerial.write(16);
+      count = 30;
+      countMillis = millis();
       break;
+  }
+
+  if((millis() - countMillis) >= countUpdate){
+    if(count == 0){
+      
+    }else{
+		Serial.println(count);
+      count--;
+    }
+
+    countMillis = millis();
   }
 }
 
