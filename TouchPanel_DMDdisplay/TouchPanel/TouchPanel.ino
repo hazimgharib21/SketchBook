@@ -2,6 +2,7 @@
 // Include Libraries 
 //********************************************************************************************************************
 
+#include <EEPROM.h>
 #include "Touch.h"
 #include "SevenSegment.h"
 #include <SoftwareSerial.h>
@@ -28,6 +29,7 @@ Touch touch;
 void setup() {
   
   initialization();
+  verification();
 
 }
 

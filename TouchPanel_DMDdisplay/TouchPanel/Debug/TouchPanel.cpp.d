@@ -11,6 +11,7 @@ C:\Users\hazimgharib\AppData\Local\Temp\VMBuilds\TouchPanel\mega_atmega2560\Debu
  C:\Users\hazimgharib\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.18\cores\arduino/USBAPI.h \
  C:\Users\hazimgharib\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.18\cores\arduino/Arduino.h \
  C:\Users\hazimgharib\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.18\variants\mega/pins_arduino.h \
+ C:\Users\hazimgharib\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.18\libraries\EEPROM\src/EEPROM.h \
  C:\Users\hazimgharib\AppData\Local\Temp\VMBuilds\TouchPanel\mega_atmega2560\Debug\Touch.h \
  C:\Users\hazimgharib\AppData\Local\Temp\VMBuilds\TouchPanel\mega_atmega2560\Debug\SevenSegment.h \
  C:\Users\hazimgharib\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.18\libraries\SoftwareSerial\src/SoftwareSerial.h \

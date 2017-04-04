@@ -4,6 +4,7 @@ int countUpdate = 1000;
 int TouchState = 99;
 int count = 0;
 bool gameStart = false;
+int needs[2] = {0,0};
 
 void updateState(){
 
@@ -48,5 +49,19 @@ void Countdown(int num){
   
 }
 
+void verification() {
 
+	int address = 0;
+	int value = 0;
+
+	value = EEPROM.read(address);
+
+	while (value > 90) {
+
+	}
+
+	value++;
+
+	EEPROM.update(value, address);
+}
 
