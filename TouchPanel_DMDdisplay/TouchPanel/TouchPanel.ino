@@ -17,8 +17,8 @@
 //********************************************************************************************************************
 
 SoftwareSerial mySerial(15, 16); // RX, TX
-SevenSegment ss1(24, 22, 26); // Latch, Data Clock
-SevenSegment ss2(30, 28, 32); // Latch, Data Clock
+SevenSegment ss2(12, 11, 13); // Latch, Data Clock
+SevenSegment ss1(6, 5, 7); // Latch, Data Clock
 Touch touch;
 
 //********************************************************************************************************************
