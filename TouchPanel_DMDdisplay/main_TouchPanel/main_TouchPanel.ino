@@ -1,6 +1,10 @@
+#include <SoftwareSerial.h>
+
+
+
 #include <EEPROM.h>
 
-#include <SoftwareSerial.h>
+
 
 #define DEBOUNCE 50 
 #define baudrate 9600
@@ -10,23 +14,23 @@
 #define arraySize(x) ((sizeof(x))/(sizeof(x[0])))
 
 byte buttons[] = { 
-  9, //start
-  8, // Bungalow House
-  7, // Piano
-  10, // Books
-  11, // Terrace House
-  12  // Hamburger
-  // Home theatre
-  // Designer Bags
-  // Sports Jersey
-  // Ensiklopedia
-  // Mini Van
-  // Kucing
-  // Foreign Language Class
-  // Lambo
-  // Bicycle
-  // 2KG of fruits
-   // Cincin
+  37, //start
+  39, // Bungalow House
+  41, // Piano
+  43, // Books
+  45, // Terrace House
+  47,  // Hamburger
+  49,// Home theatre
+  51,// Designer Bags
+  53,// Sports Jersey
+  35,// Ensiklopedia
+  33,// Mini Van
+  31,// Kucing
+  29,// Foreign Language Class
+  27,// Lambo
+  25,// Bicycle
+  21,// 2KG of fruits
+  23// Cincin
 };
 
 SoftwareSerial mySerial(0, 1);
@@ -64,7 +68,7 @@ void loop() {
 
   
   for (byte i = 0; i < NUMBUTTONS; i++) {
-    if (justpressed[i]) {
+    if (justreleased[i]) {
     
       
       if(evaluate){
