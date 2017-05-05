@@ -9,7 +9,7 @@
 #define DEBOUNCE 50 
 #define baudrate 9600
 #define Combaudrate 2400
-#define debugMode true // set to true only for debugging
+#define debugMode false // set to true only for debugging
 #define serialMode false
 #define arraySize(x) ((sizeof(x))/(sizeof(x[0])))
 
@@ -33,17 +33,17 @@ byte buttons[] = {
   23// Cincin
 };
 
-SoftwareSerial mySerial(0, 1);
+SoftwareSerial mySerial(15, 16);
 
 const byte NUMBUTTONS = sizeof(buttons);
 byte pressed[NUMBUTTONS], justpressed[NUMBUTTONS], justreleased[NUMBUTTONS];
 
-const byte buzzerPin = 13;
+const byte buzzerPin = 14;
 
-int numHex[11] = { 192, 249, 164, 176, 153, 146, 130, 248, 128, 152, 127 };
-byte latchPin[] = {12, 6};
+int numHex[11] = { 2, 47, 17, 5, 44, 68, 64, 15, 0, 12, 128 };
+byte latchPin[] = {13, 7};
 byte dataPin[] = {11, 5};
-byte clockPin[] = {13, 7};
+byte clockPin[] = {12, 6};
 unsigned long countMillis = 0;
 int countUpdate = 1000;
 
@@ -64,8 +64,18 @@ void loop() {
 
   delay(50);
   updateTouch();
-  CountDown(count);
+  if(gameStart){
+    CountDown(count);
+  }
+  else{
+        digitalWrite(latchPin[0], LOW);
+  shiftOut(dataPin[0], clockPin[0], MSBFIRST, numHex[10]);
+  digitalWrite(latchPin[0], HIGH);
 
+  digitalWrite(latchPin[1], LOW);
+  shiftOut(dataPin[1], clockPin[1], MSBFIRST, numHex[10]);
+  digitalWrite(latchPin[1], HIGH);
+  }
   
   for (byte i = 0; i < NUMBUTTONS; i++) {
     if (justreleased[i]) {
@@ -79,11 +89,12 @@ void loop() {
         if(gameStart){
           
         }else{
-          buzzer('e');
+          
           gameStart = true;
           count = 30;
           countMillis = millis();
           dmd(i);
+          buzzer('e');
         }
       }else{
         if(gameStart){
@@ -119,7 +130,7 @@ void loop() {
       
       
     }
-    
+
     countMillis = millis();
   }
   
@@ -129,7 +140,7 @@ void evaluation(){
   Serial.print("\t\t");
   Serial.println("< EVALUATION START >");
   dmd(30);
-  delay(5000);
+  delay(4000);
   
   if((need == 0) && (want == 0)){
     dmd(36); 

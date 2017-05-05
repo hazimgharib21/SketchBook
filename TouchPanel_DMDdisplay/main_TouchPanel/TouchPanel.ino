@@ -53,16 +53,16 @@ void getTouched(){
 }
 
 void buzzer(char state){
-  if(state = 'p'){
+  if(state == 'p'){
     digitalWrite(buzzerPin, HIGH);
-    delay(500);
+    delay(100);
     digitalWrite(buzzerPin, LOW);
-  }else if(state = 'e'){
+  }else if(state == 'e'){
     for(int i = 0; i <= 3; i++){
       digitalWrite(buzzerPin, HIGH);
-      delay(500);
+      delay(50);
       digitalWrite(buzzerPin, LOW);
-      delay(500);
+      delay(50);
     }
   }
 }

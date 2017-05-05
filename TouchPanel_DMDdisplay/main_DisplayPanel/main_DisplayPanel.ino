@@ -82,9 +82,10 @@ void setup(void){
   // Initialize Serial
   Serial.begin(9600);
   mySerial.begin(2400);
-
+  long num = 9999999;
   // Initialize the display
   panelInit(ayat_mula);
+  //toChar(999999);
 }
 
 void loop(){
@@ -93,6 +94,7 @@ void loop(){
 
   if(mySerial.available() > 0){
     input = mySerial.read();
+    Serial.println(input);
     delay(1);
   }else{
     input = 50;
@@ -232,57 +234,57 @@ switch(input){
         case 6:
           panelInit(ayat_6);
           Serial.println(ayat_6);
-          sum += bungalow;
+          sum += hometheatre;
           break;
         case 7:
           panelInit(ayat_7);
           Serial.println(ayat_7);
-          sum += piano;
+          sum += bags;
           break;
         case 8:
           panelInit(ayat_8);
           Serial.println(ayat_8);
-          sum += books;
+          sum += jersey;
           break;
         case 9:
           panelInit(ayat_9);
           Serial.println(ayat_9);
-          sum += terrace;
+          sum += ensiklopedia;
           break;
         case 10:
           panelInit(ayat_10);
           Serial.println(ayat_10);
-          sum += hamburger;
+          sum += van;
           break;
         case 11:
           panelInit(ayat_11);
           Serial.println(ayat_11);
-          sum += bungalow;
+          sum += cat;
           break;
         case 12:
           panelInit(ayat_12);
           Serial.println(ayat_12);
-          sum += piano;
+          sum += languageclass;
           break;
         case 13:
           panelInit(ayat_13);
           Serial.println(ayat_13);
-          sum += books;
+          sum += lambogini;
           break;
         case 14:
           panelInit(ayat_14);
           Serial.println(ayat_14);
-          sum += terrace;
+          sum += bicycle;
           break;
         case 15:
           panelInit(ayat_15);
           Serial.println(ayat_15);
-          sum += hamburger;
+          sum += fruits;
           break;
         case 16:
           panelInit(ayat_16);
-          Serial.println(ayat_15);
-          sum += hamburger;
+          Serial.println(ayat_16);
+          sum += ring;
           break;
         case 30:
           toChar(sum);

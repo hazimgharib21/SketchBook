@@ -1,5 +1,5 @@
 // Initialize words
-char *initialize = "INITIALIZING...";
+char *initializes = "INITIALIZING...";
 char *com = "COM ESTABLISH...";
 char *ayat_mula = "BANK NEGARA MALAYSIA RM1,000,000                    CLICK START TO PLAY";
 
@@ -56,7 +56,8 @@ long  sum = 0;
 
 void dmd(byte touch){
   
- 
+  Serial.print("SUM = ");
+  Serial.println(sum);
   switch(touch){
         
         case 0:
@@ -92,57 +93,57 @@ void dmd(byte touch){
         case 6:
           mySerial.write(touch);
           Serial.println(ayat_6);
-          sum += bungalow;
+          sum += hometheatre;
           break;
         case 7:
           mySerial.write(touch);
           Serial.println(ayat_7);
-          sum += piano;
+          sum += bags;
           break;
         case 8:
           mySerial.write(touch);
           Serial.println(ayat_8);
-          sum += books;
+          sum += jersey;
           break;
         case 9:
           mySerial.write(touch);
           Serial.println(ayat_9);
-          sum += terrace;
+          sum += ensiklopedia;
           break;
         case 10:
           mySerial.write(touch);
           Serial.println(ayat_10);
-          sum += hamburger;
+          sum += van;
           break;
         case 11:
           mySerial.write(touch);
           Serial.println(ayat_11);
-          sum += bungalow;
+          sum += cat;
           break;
         case 12:
           mySerial.write(touch);
           Serial.println(ayat_12);
-          sum += piano;
+          sum += languageclass;
           break;
         case 13:
           mySerial.write(touch);
           Serial.println(ayat_13);
-          sum += books;
+          sum += lambogini;
           break;
         case 14:
           mySerial.write(touch);
           Serial.println(ayat_14);
-          sum += terrace;
+          sum += bicycle;
           break;
         case 15:
           mySerial.write(touch);
           Serial.println(ayat_15);
-          sum += hamburger;
+          sum += fruits;
           break;
         case 16:
           mySerial.write(touch);
-          Serial.println(ayat_15);
-          sum += hamburger;
+          Serial.println(ayat_16);
+          sum += ring;
           break;
         case 30:
           mySerial.write(touch);
@@ -190,19 +191,19 @@ void dmd(byte touch){
           }
           break;
         case 36: // nothing
-          mySerial.write(touch);
+          mySerial.write(36);
           Serial.println(nasihatNothing);
           break;
         case 41:
-          mySerial.write(touch);
+          mySerial.write(41);
           Serial.println(ayat_mula);
           break;
         case 40:
-          mySerial.write(touch);
-          Serial.println(initialize);
+          mySerial.write(40);
+          Serial.println(initializes);
           break;
         case 42:
-          mySerial.write(touch);
+          mySerial.write(42);
           Serial.println(com);
           break;
         

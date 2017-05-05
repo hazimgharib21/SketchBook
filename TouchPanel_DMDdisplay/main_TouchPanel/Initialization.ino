@@ -13,8 +13,8 @@ void initSerial(){
   if(debugMode || serialMode){
     Serial.begin(baudrate);
     while(!Serial){}
-    if(serialMode) Serial.print(F("< Arduino ready >\n"));
-    if(debugMode) Serial.print(F("< DebugMode begin >\n"));
+    //if(serialMode) Serial.print(F("< Arduino ready >\n"));
+    //if(debugMode) Serial.print(F("< DebugMode begin >\n"));
   }
 
   dmd(40);
@@ -49,23 +49,30 @@ void initOutput(){
   }
 
   for(byte i = 0; i < arraySize(clockPin); i++){
-    pinMode(dataPin[i], OUTPUT);
-    digitalWrite(dataPin[i], LOW);
+    pinMode(clockPin[i], OUTPUT);
+    digitalWrite(clockPin[i], LOW);
   }
+    
 }
 
 void verification() {
-
+  
   int address = 1;
   int value = 0;
 
   value = EEPROM.read(address);
-
-  while (value > 90) {
+  Serial.print("EEPROM Value = ");
+  Serial.println(value);
+  
+  while (value > 100) {
 
   }
 
-  value++;
+  value = 1 + value;
 
-  EEPROM.update(value, address);
+ 
+
+  EEPROM.write(address, value);
+
+  
 }
